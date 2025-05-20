@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Certificate data
     const certificateData = {
         name: "Priyanshu Nishant",
         course: "How to be a Successful Business Analyst",
@@ -17,14 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // DOM Elements
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const closeBtn = document.querySelector('.close-btn');
     const logo = document.getElementById('logo');
     const certificate = document.getElementById('certificate');
 
-    // Populate certificate information
     function populateCertificateInfo() {
         document.getElementById('issuedTo').textContent = certificateData.name;
         document.getElementById('issuedBy').textContent = certificateData.issuedBy;
@@ -36,14 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('orgName').textContent = certificateData.organization.name;
         document.getElementById('orgAddress').textContent = certificateData.organization.address;
 
-        // Populate skills
         const skillsList = document.getElementById('skillsList');
         skillsList.innerHTML = certificateData.skills
             .map(skill => `<span class="skill-badge">${skill}</span>`)
             .join('');
     }
 
-    // Modal functions
     function showImage(imgSrc) {
         modal.style.display = 'block';
         modalImg.src = imgSrc;
@@ -53,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
     }
 
-    // Event Listeners
     logo.addEventListener('click', () => showImage(logo.src));
     certificate.addEventListener('click', () => showImage(certificate.src));
     closeBtn.addEventListener('click', closeModal);
@@ -64,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') closeModal();
     });
 
-    // Download handler
     document.getElementById('download-btn').addEventListener('click', () => {
         const link = document.createElement('a');
         link.href = certificateData.certificateImage;
@@ -74,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.removeChild(link);
     });
 
-    // LinkedIn share handler
     document.getElementById('linkedin-btn').addEventListener('click', () => {
         const linkedInUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME
             &name=${encodeURIComponent(certificateData.course)}
@@ -86,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open(linkedInUrl.replace(/\s+/g, ''), '_blank');
     });
 
-    // Share handler
     document.getElementById('share-btn').addEventListener('click', () => {
         if (navigator.share) {
             navigator.share({
@@ -101,6 +92,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize the page
     populateCertificateInfo();
 });
