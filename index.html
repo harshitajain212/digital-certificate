@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate | GiveMyCertificate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Give My Certificate</h1>
+            <p class="subtitle">Your verified credentials, always accessible</p>
+        </header>
+
+        <main class="main-content">
+            <div class="image-container">
+                <div class="image-wrapper">
+                    <img src="oswa.jpg" alt="Company Logo" class="logo" id="logo">
+                </div>
+                <div class="image-wrapper">
+                    <img src="certificate-image.jpeg" alt="Certificate Preview" class="certificate-img" id="certificate">
+                </div>
+            </div>
+
+            <div class="modal" id="imageModal">
+                <span class="close-btn">&times;</span>
+                <img id="modalImage" src="" alt="Enlarged Image">
+            </div>
+
+            <section class="certificate-details">
+                <div class="action-buttons">
+                    <button id="download-btn">Download</button>
+                    <button id="linkedin-btn">Add to LinkedIn</button>
+                    <button id="share-btn">Share</button>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-row">
+                        <div class="info-item">
+                            <span class="label">Issued to</span>
+                            <p class="value" id="issuedTo"></p>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Issued by</span>
+                            <p class="value" id="issuedBy"></p>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item">
+                            <span class="label">Event Start Date</span>
+                            <p class="value" id="startDate"></p>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Event End Date</span>
+                            <p class="value" id="endDate"></p>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item">
+                            <span class="label">Issued on</span>
+                            <p class="value" id="issueDate"></p>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Expires on</span>
+                            <p class="value" id="expiryDate"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-info">
+                    <h3>About the Course</h3>
+                    <p id="courseDescription"></p>
+                </div>
+
+                <div class="skills-section">
+                    <h3>Skills Acquired</h3>
+                    <div class="skills-list" id="skillsList"></div>
+                </div>
+
+                <div class="organization-info">
+                    <div class="org-details">
+                        <span class="label">Verified by</span>
+                        <p class="value" id="orgName"></p>
+                        <p class="address" id="orgAddress"></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 GiveMyCertificate.com • All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
